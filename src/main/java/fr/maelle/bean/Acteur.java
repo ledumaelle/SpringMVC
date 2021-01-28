@@ -1,4 +1,4 @@
-package fr.maelle.filmotheque.bean;
+package fr.maelle.bean;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -9,8 +9,7 @@ import java.io.Serializable;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
+@DiscriminatorValue("A")
 @Data
-@DiscriminatorValue("R")
-public class Realisateur extends Personne implements Serializable {
-
+public class Acteur extends Personne implements Serializable {
 }

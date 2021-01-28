@@ -1,4 +1,4 @@
-package fr.maelle.filmotheque.bean;
+package fr.maelle.bean;
 
 import lombok.Data;
 
