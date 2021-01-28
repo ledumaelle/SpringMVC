@@ -4,12 +4,7 @@
              version="2.0">
 
     <persistence-unit name="bdd_filmotheque">
-
-        <class>fr.maelle.filmotheque.bean.Acteur</class>
-        <class>fr.maelle.filmotheque.bean.Film</class>
-        <class>fr.maelle.filmotheque.bean.Personne</class>
-        <class>fr.maelle.filmotheque.bean.Realisateur</class>
-        <class>fr.maelle.filmotheque.bean.Style</class>
+        <!--Plus besoin de mettre les fichiers à perister ici -->
 
         <properties>
             <property name="hibernate.dialect" value="org.sqlite.hibernate.dialect.SQLiteDialect"/>
@@ -21,7 +16,7 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="format_sql" value="true"/>
             <property name="hibernate.connection.charSet" value="UTF-8"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
 </persistence>
