@@ -39,8 +39,7 @@ public class StyleController {
 
         try {
             gestionStyle.add(style);
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("ERREUR lors de la suppression du style : " + style.getLibelle());
         }
         return index();
@@ -70,7 +69,7 @@ public class StyleController {
 
                 gestionStyle.delete(id);
 
-            }catch(Exception e) {
+            } catch (Exception e) {
                 System.out.println("ERREUR lors de la suppression du style : " + id);
             }
 

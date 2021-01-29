@@ -1,5 +1,6 @@
 package fr.maelle.bean;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,16 +11,22 @@ import java.io.Serializable;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE")
 @DiscriminatorValue("P")
+@Builder
 public class Personne implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
-    @Column(name = "NOM", length = 50, nullable = false)
     private String nom;
-
-    @Column(name = "PRENOM", length = 50, nullable = false)
     private String prenom;
 
+    public Personne() {
+    }
+
+    public Personne(int id, String nom, String prenom) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+    }
 }

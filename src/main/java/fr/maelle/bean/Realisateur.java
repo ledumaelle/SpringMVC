@@ -13,4 +13,7 @@ import java.io.Serializable;
 @DiscriminatorValue("R")
 public class Realisateur extends Personne implements Serializable {
 
+    public Realisateur() {
+        super();
+    }
 }

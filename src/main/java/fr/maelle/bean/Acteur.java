@@ -12,4 +12,8 @@ import java.io.Serializable;
 @DiscriminatorValue("A")
 @Data
 public class Acteur extends Personne implements Serializable {
+
+    public Acteur() {
+        super();
+    }
 }

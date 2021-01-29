@@ -27,7 +27,15 @@ public class GestionFilm {
 
         logger.info(film);
 
-        iFilmDAO.save(film);
+                try {
+            iFilmDAO.save(film);
+
+        }catch(Exception e) {
+
+                logger.error(e.getMessage());
+
+        }
+
     }
 
     public void delete(Film film) {

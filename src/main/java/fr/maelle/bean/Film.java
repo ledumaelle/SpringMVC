@@ -5,7 +5,6 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 import java.io.Serializable;
 import java.util.List;
 
@@ -18,33 +17,40 @@ public class Film implements Serializable {
     private int id;
 
     @NotBlank
-    @Column(name="TITRE",length = 50, nullable = false)
     private String titre;
 
-    @Column(name="ANNEE")
     private int annee;
 
     @NotNull
     @ManyToOne
     private Style style;
 
-    @Null
-    @OneToOne(cascade = CascadeType.ALL , fetch = FetchType.EAGER, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.ALL)
     private Realisateur realisateur;
 
-    @Null
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    @JoinColumn(name = "FILM_ID")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Acteur> acteurs;
 
-    @Column(name="DUREE")
     private int duree;
 
     @NotNull
-    @Column(name="VU")
     private Boolean vu;
 
-    @Null
-    @Column(name="SYNOPSIS")
     private String synopsis;
+
+
+    public Film() {
+    }
+
+    public Film(int id, @NotBlank String titre, int annee, @NotNull Style style, Realisateur realisateur, List<Acteur> acteurs, int duree, @NotNull Boolean vu, String synopsis) {
+        this.id = id;
+        this.titre = titre;
+        this.annee = annee;
+        this.style = style;
+        this.realisateur = realisateur;
+        this.acteurs = acteurs;
+        this.duree = duree;
+        this.vu = vu;
+        this.synopsis = synopsis;
+    }
 }
